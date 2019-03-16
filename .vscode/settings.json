@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "codemetrics.basics.CodeLensHiddenUnder": 11,
+  "codemetrics.basics.ComplexityLevelNormal": 10,
+  "codemetrics.basics.ComplexityLevelHigh": 20,
+  "codemetrics.basics.ComplexityLevelExtreme": 40,
+  "codemetrics.basics.ComplexityLevelNormalDescription": "This is getting harder to maintain.",
+  "codemetrics.basics.ComplexityLevelHighDescription": "This is a candidate for refactor or redesign.",
+  "codemetrics.basics.ComplexityLevelExtremeDescription": "Bloody hell...",
+  "codemetrics.nodeconfiguration.JsxElement": 0,
+  "codemetrics.nodeconfiguration.JsxSelfClosingElement": 0,
+  "editor.fontSize": 14,
+  "editor.tabSize": 2,
+}
