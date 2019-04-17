@@ -18,6 +18,7 @@
     "node": "^9.8.0",
     "node-sass": "^4.11.0",
     "node-sass-chokidar": "^1.1.2",
+    "normalize.css": "^8.0.1",
     "passport": "^0.4.0",
     "passport-facebook": "^3.0.0",
     "passport-google-oauth": "^1.0.0",

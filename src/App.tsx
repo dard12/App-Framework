@@ -1,72 +1,22 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
-import Axios from 'axios';
 import history from './history';
-import Navbar from './navbar/Navbar';
-import Landing from './landing/Landing';
-import Login from './login/Login';
-import Profile from './profile/Profile';
-
-const LoginContext = React.createContext<AppState>({
-  loggedIn: false,
-  login: undefined,
-  logout: undefined
-});
-
-function getAxios(token = localStorage.getItem('token')) {
-  const params = token ? { headers: { Authorization: `Bearer ${token}` } } : {};
-
-  return Axios.create(params);
-}
-
-let axios = getAxios();
+import Navbar from './layouts/navbar/Navbar';
+import Landing from './layouts/landing/Landing';
+import Login from './layouts/login/Login';
+import Profile from './layouts/profile/Profile';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+import Axios from 'axios';
 
 const NotFound = () => (
   <h1>Whoops! We can't find the page you're looking for.</h1>
 );
 
-export interface AppState {
-  loggedIn: boolean;
-
-  login:
-    | (({ token }: { token: string }, callback: () => void) => void)
-    | undefined;
-
-  logout: (() => void) | undefined;
-}
-
-class App extends React.Component<any, AppState> {
-  constructor(props: any) {
-    super(props);
-
-    this.state = {
-      loggedIn: Boolean(localStorage.getItem('token')),
-      login: this.login.bind(this),
-      logout: this.logout.bind(this)
-    };
-  }
-
-  login({ token }: { token: string }, callback: () => void) {
-    if (token) {
-      localStorage.setItem('token', token);
-
-      axios = getAxios();
-
-      this.setState({ loggedIn: true }, callback);
-    }
-  }
-
-  logout() {
-    localStorage.removeItem('token');
-
-    axios = getAxios();
-
-    this.setState({ loggedIn: false });
-  }
-
+class App extends React.Component {
   render() {
     return (
-      <LoginContext.Provider value={this.state}>
+      <Provider store={store}>
         <Router history={history}>
           <div>
             <Navbar />
@@ -83,9 +33,11 @@ class App extends React.Component<any, AppState> {
             </div>
           </div>
         </Router>
-      </LoginContext.Provider>
+      </Provider>
     );
   }
 }
 
-export { App, LoginContext, axios };
+const axios = Axios.create();
+
+export { App, axios };
