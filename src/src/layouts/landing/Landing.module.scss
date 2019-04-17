@@ -1,0 +1,17 @@
+@import '../../template.scss';
+
+.header {
+  text-align: center;
+  font-size: $text-8;
+  margin-top: 18vh;
+  line-height: 2;
+}
+
+.link {
+  font-weight: 600;
+  box-shadow: 0 7px 14px rgba($blue-1, 0.5), 0 3px 6px rgba($blue-1, 0.7);
+  background-color: $dark;
+  padding: 5px 15px;
+  color: $blue-1;
+  margin: 0 10px;
+}

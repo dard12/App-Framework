@@ -1,11 +1,12 @@
 {
-  "name": "ratings",
+  "name": "testapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
+    "classnames": "^2.2.6",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.3",
     "formik": "^0.11.11",
@@ -15,6 +16,7 @@
     "mongo": "^0.1.0",
     "mongoose": "^5.0.10",
     "node": "^9.8.0",
+    "node-sass": "^4.11.0",
     "node-sass-chokidar": "^1.1.2",
     "passport": "^0.4.0",
     "passport-facebook": "^3.0.0",
@@ -23,9 +25,13 @@
     "passport-local": "^1.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^6.0.1",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "^2.1.8"
+    "react-scripts": "^2.1.8",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-starter-kit": "^0.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,14 +45,10 @@
   },
   "proxy": "http://localhost:8080",
   "devDependencies": {
-    "prettier": "^1.16.4",
-    "stylelint": "^9.10.1",
-    "stylelint-config-prettier": "^4.0.0",
-    "stylelint-config-standard": "^18.2.0",
-    "typescript": "^3.3.3",
     "@types/axios": "^0.14.0",
     "@types/bcrypt": "^3.0.0",
     "@types/body-parser": "^1.17.0",
+    "@types/classnames": "^2.2.7",
     "@types/cookie-parser": "^1.4.1",
     "@types/express": "^4.16.1",
     "@types/jest": "^24.0.0",
@@ -62,7 +64,17 @@
     "@types/qs": "^6.5.2",
     "@types/react": "^16.8.2",
     "@types/react-dom": "^16.8.0",
-    "@types/react-router-dom": "^4.3.1"
+    "@types/react-redux": "^7.0.6",
+    "@types/react-router-dom": "^4.3.1",
+    "@types/redux-logger": "^3.0.7",
+    "@typescript-eslint/eslint-plugin": "^1.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "prettier": "^1.16.4",
+    "stylelint": "^9.10.1",
+    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-config-standard": "^18.2.0",
+    "typescript": "^3.3.3"
   },
   "browserslist": [
     ">0.2%",

@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-mongoose.connect('mongodb://localhost/ratings', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/testapp', { useNewUrlParser: true });
 
 export interface DefaultDoc extends mongoose.Document {
   createdAt: Date;

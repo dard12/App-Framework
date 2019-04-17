@@ -1,0 +1,33 @@
+@import '../../template.scss';
+
+.navbar-container {
+  background-color: rgba($white, 0.6);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+  width: $page-width;
+  margin: 0 auto;
+  justify-content: flex-end;
+  font-family: $sans-serif;
+  height: 3.7em;
+
+  a {
+    padding: 1em;
+    display: block;
+  }
+}
+
+.brand {
+  font-family: $serif;
+  font-weight: 600;
+  margin-right: auto;
+  font-size: $text-5;
+  padding: 0;
+}
+
+.logout-btn {
+  color: rgba($dark, 0.5);
+}
