@@ -9,7 +9,8 @@
   font-size: $text-4;
 
   input {
-    width: 100%;
+    width: calc(100% - 0.5em);
+    box-sizing: border-box;
   }
 
   label {
