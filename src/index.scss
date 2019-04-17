@@ -17,6 +17,10 @@ body {
   background-color: rgba($blue-1, 0.05);
 }
 
+li, ul {
+  list-style: none;
+}
+
 a {
   color: $dark;
   font-weight: 500;
@@ -50,6 +54,7 @@ a {
   background-color: $white;
   margin: 0.25em;
   font-size: 1em;
+  font-family: $sans-serif;
 
   &:focus,
   &:hover {
@@ -75,6 +80,7 @@ a {
   cursor: pointer;
   font-weight: 500;
   box-shadow: 0 7px 14px rgba($blue-1, 0.5), 0 3px 6px rgba($blue-1, 0.7);
+  font-family: $sans-serif;
 
   &:hover {
     background-color: rgba($dark, 0.9);
@@ -105,4 +111,13 @@ a {
   margin-bottom: 0.6em;
   margin-top: 0.3em;
   color: $dark;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
