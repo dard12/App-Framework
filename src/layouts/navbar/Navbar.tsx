@@ -19,40 +19,33 @@ class Navbar extends React.Component<NavbarProps> {
     if (token) {
       return (
         <React.Fragment>
-          <Link to="/profile" className={styles.brand}>
+          <Link to="/home" className={styles.brand}>
             Test App
           </Link>
 
-          <li>
+          <div>
             <Link
               to="/login"
               className={styles['logout-btn']}
               onClick={() => {
                 logoutAction();
                 axios.get('/logout');
-                history.push('/login');
               }}
             >
               Logout
             </Link>
-          </li>
+          </div>
 
-          <li>
+          <div>
             <Link to="/profile">Profile</Link>
-          </li>
+          </div>
         </React.Fragment>
       );
     } else {
       return (
-        <React.Fragment>
-          <Link to="/" className={styles.brand}>
-            Test App
-          </Link>
-
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-        </React.Fragment>
+        <Link to="/" className={styles.brand}>
+          Test App
+        </Link>
       );
     }
   }
@@ -60,7 +53,7 @@ class Navbar extends React.Component<NavbarProps> {
   render() {
     return (
       <div className={styles['navbar-container']}>
-        <ul className={styles.navbar}>{this.navItems()}</ul>
+        <div className={styles.navbar}>{this.navItems()}</div>
       </div>
     );
   }

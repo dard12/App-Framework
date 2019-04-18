@@ -68,7 +68,7 @@ const Login = ({ loginAction }: LoginProps) => (
 
         if (token) {
           loginAction(token);
-          history.push('/profile');
+          history.push('/home');
         }
       });
 
@@ -96,6 +96,8 @@ const Login = ({ loginAction }: LoginProps) => (
           </div>
         );
       }
+
+      const actionText = isLogin ? 'Log In' : 'Sign Up';
 
       return (
         <form onSubmit={handleSubmit} className={styles['login-form']}>
@@ -137,7 +139,7 @@ const Login = ({ loginAction }: LoginProps) => (
             type="submit"
             disabled={isSubmitting}
           >
-            {isLogin ? 'Log In' : 'Sign Up'}
+            {actionText}
           </button>
 
           <div className={styles['auth-divider']}> Or </div>
@@ -146,13 +148,13 @@ const Login = ({ loginAction }: LoginProps) => (
             className={classnames('btn', styles['facebook-auth'])}
             href="/auth/facebook"
           >
-            {isLogin ? 'Log In' : 'Sign Up'} with Facebook
+            {actionText} with Facebook
           </a>
           <a
             className={classnames('btn', styles['google-auth'])}
             href="/auth/google"
           >
-            {isLogin ? 'Log In' : 'Sign Up'} with Google
+            {actionText} with Google
           </a>
           {loginSwitch}
         </form>
